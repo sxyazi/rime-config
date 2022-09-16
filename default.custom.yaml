@@ -1,0 +1,34 @@
+patch:
+  schema_list:
+    - schema: luna # 朙月拼音
+    - schema: flypy # 小鹤双拼
+
+  menu/page_size: 6 # 候选词个数
+
+  # 若 caps 切换大小写无效, 打开 Mac 系统偏好设置 > 键盘 > 输入法 > 取消勾选[使用大写锁定键切换“美国”输入模式]
+  ascii_composer/good_old_caps_lock: true # 若为 true， Caps 只切换大小写
+  ascii_composer/switch_key:
+    Caps_Lock: commit_code # Caps 键
+    Shift_L: commit_code # 左 Shift，切换中英文
+    Shift_R: commit_code # 右 Shift，切换中英文
+    Control_L: noop # 左 Control，屏蔽该切换键
+    Control_R: noop # 右 Control，屏蔽该切换键
+
+  # 匹配 patterns 时，原样输出
+  recognizer/patterns:
+    url1: '^(https?|ftp|file):.*$'
+    url2: '^([a-z]+\.)+([a-z]+)?$'
+    email: '^[A-Za-z][-_.0-9A-Za-z]*@.*$'
+    uppercase: "[A-Z][-_+.'0-9A-Za-z]*$"
+
+  key_binder/bindings: # 若开启, 去掉前面#
+    # 翻页
+    - { when: composing, accept: Tab, send: Shift+Right } # "tab" 键分词
+    - { when: composing, accept: Shift+Tab, send: Shift+Left } # "Shift+Tab" 键向左选拼音分词
+    - { when: paging, accept: Shift+I, send: Page_Up } # "-" 上一页
+    - { when: has_menu, accept: Shift+J, send: Page_Down } # "=" 下一页
+    # 快捷键
+    #- { when: composing, accept: Control+a, send: Home }          # "Control+a" 光标移至首
+    #- { when: composing, accept: Control+e, send: End }           # "Control+e" 光标移至尾
+    - { when: always, accept: Option+Shift+1, toggle: traditionalization } # 简繁转换
+    - { when: always, accept: Option+Shift+2, toggle: full_shape } # 全角/半角切换 TODO

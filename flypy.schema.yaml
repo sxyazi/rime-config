@@ -1,0 +1,110 @@
+# Rime schema
+# encoding: utf-8
+
+schema:
+  schema_id: flypy
+  name: 小鹤双拼
+  version: '0.18'
+  author:
+    - double pinyin layout by 鶴
+    - Rime schema by 佛振 <chen.sst@gmail.com>
+  description: |
+    朙月拼音＋小鶴雙拼方案。
+  dependencies:
+    - easy_en
+
+switches:
+  - name: ascii_mode # 0 中文，1 英文
+    reset: 0
+    states: [中文, 英文]
+  - name: traditionalization # 简繁转换
+    reset: 0
+    states: [简体, 繁體]
+  - name: emoji_suggestion # Emoji 开关
+    reset: 1
+    states: ["🈚️️\uFE0E", "🈶️️\uFE0F"]
+  - name: full_shape # 全角/半角符号开关
+    states: [半角, 全角]
+  - options: ['utf8', 'gbk', 'gb2312'] # 字符集选单
+    reset: 0 # 默认 UTF8
+    states:
+      - UTF-8
+      - GBK
+      - GB2312
+
+engine:
+  processors:
+    - ascii_composer
+    - recognizer
+    - key_binder
+    - speller
+    - punctuator
+    - selector
+    - navigator
+    - express_editor
+  segmentors:
+    - ascii_segmentor
+    - matcher
+    - abc_segmentor
+    - punct_segmentor
+    - fallback_segmentor
+  translators:
+    - punct_translator # 转换标点符号
+    - script_translator # 脚本翻译器，用于拼音等基于音节表的输入方案
+    - lua_translator@date_translator # 日期、时间、周
+    - table_translator@custom_phrase # 自定义词组
+    - table_translator@english # 英文输入
+  filters:
+    - simplifier
+    - simplifier@emoji_suggestion # 文字转 Emoji
+    - simplifier@traditionalize # 简繁转换
+    - uniquifier
+    - charset_filter@gbk # GBK 过滤
+    # - single_char_filter
+    - lua_filter@cn_first
+
+speller:
+  alphabet: zyxwvutsrqponmlkjihgfedcba
+  delimiter: " '"
+  algebra:
+    - erase/^xx$/
+    - derive/^([jqxy])u$/$1v/
+    - derive/^([aoe])([ioun])$/$1$1$2/
+    - xform/^([aoe])(ng)?$/$1$1$2/
+    - xform/iu$/Q/
+    - xform/(.)ei$/$1W/
+    - xform/uan$/R/
+    - xform/[uv]e$/T/
+    - xform/un$/Y/
+    - xform/^sh/U/
+    - xform/^ch/I/
+    - xform/^zh/V/
+    - xform/uo$/O/
+    - xform/ie$/P/
+    - xform/i?ong$/S/
+    - xform/ing$|uai$/K/
+    - xform/(.)ai$/$1D/
+    - xform/(.)en$/$1F/
+    - xform/(.)eng$/$1G/
+    - xform/[iu]ang$/L/
+    - xform/(.)ang$/$1H/
+    - xform/ian$/M/
+    - xform/(.)an$/$1J/
+    - xform/(.)ou$/$1Z/
+    - xform/[iu]a$/X/
+    - xform/iao$/N/
+    - xform/(.)ao$/$1C/
+    - xform/ui$/V/
+    - xform/in$/B/
+    - xlit/QWRTYUIOPSDFGHJKLZXCVBNM/qwrtyuiopsdfghjklzxcvbnm/
+    #- abbrev/^(.).+$/$1/
+
+translator:
+  dictionary: cn_dicts
+  prism: flypy
+  # 以下 3 行用于八股文语法
+  contextual_suggestions: true
+  max_homophones: 7
+  max_homographs: 7
+
+__include: common:/

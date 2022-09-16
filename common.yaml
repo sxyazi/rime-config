@@ -1,0 +1,87 @@
+grammar:
+  language: zh-hant-t-essay-bgw
+
+recognizer:
+  import_preset: default
+  patterns:
+    punct: '^v([0-9]0?|[A-Za-z]+)$'
+
+punctuator:
+  import_preset: symbols
+  half_shape:
+    '#': '#'
+    '*': '*'
+    '`': '`'
+    '~': '~'
+    '@': '@'
+    '=': '='
+    '\': '、'
+    '%': '%'
+    '$': '$'
+    '|': '|'
+    '/': '/'
+    "'": "'"
+    '[': '['
+    ']': ']'
+    '<': '<'
+    '>': '>'
+  symbols:
+    'vl': [「, 《, 【]
+    'vr': [」, 》, 】]
+    'vbq': [😂, 🤔, 😭, 😅, 😱, 😆, 😍, 😘, 😊, 😃, 😋, 😎, 😉, 😗]
+    'vss': [👌, 👍, 👎, 🤝, 👏, 👆, 👇, 👈, 👉, 💪, ✊, 👊, ✋]
+    'vsw': [🍺, 🎂, 🍉, 🍎, 🍓, 🍌, 🍍, 🍇, 🍏, 🍑, 🍒, 🍗, 🍦]
+    'vxh': [×, ＊, ✱, ★, ☆, ✩, ✧, ❋]
+    # 数字
+    'v0': [〇, ⓪, 0️⃣, ⓿]
+    'v1': [壹, ①, 1️⃣, Ⅰ, ➊, ㈠]
+    'v2': [贰, ②, 2️⃣, Ⅱ, ➋, ㈡]
+    'v3': [叁, ③, 3️⃣, Ⅲ, ➌, ㈢]
+    'v4': [肆, ④, 4️⃣, Ⅳ, ➍, ㈣]
+    'v5': [伍, ⑤, 5️⃣, Ⅴ, ➎, ㈤]
+    'v6': [陆, ⑥, 6️⃣, Ⅵ, ➏, ㈥]
+    'v7': [柒, ⑦, 7️⃣, Ⅶ, ➐, ㈦]
+    'v8': [捌, ⑧, 8️⃣, Ⅷ, ➑, ㈧]
+    'v9': [玖, ⑨, 9️⃣, Ⅸ, ➒, ㈨]
+    'v10': [拾, ⑩, 🔟, Ⅹ, ➓, ㈩]
+    'vfs': [½, ⅓, ⅔, ¼, ⅕, ⅖, ⅗, ⅘, ⅙, ⅚, ⅐, ⅛, ⅜, ⅝, ⅞, ⅑, ⅒]
+    # 键盘符号
+    'vcmd': [⌘]
+    'vctrl': [⌃]
+    'vopt': [⌥]
+    'vesc': [⎋]
+    'vshift': [⇧]
+    'venter': [⏎]
+    'vspace': [␣]
+    'vback': [⌫]
+    'vdel': [⌦]
+    'vcap': [⇪]
+    'vret': [⏎]
+
+key_binder:
+  import_preset: default
+
+traditionalize:
+  opencc_config: s2t.json
+  option_name: traditionalization
+
+english:
+  dictionary: easy_en
+  spelling_hints: 6
+  enable_completion: false # 联想补全
+  enable_sentence: false # 禁止造句
+  enable_user_dict: false # 禁用用户词典
+  initial_quality: 1 # 英文候选词的位置, 数值越大越靠前
+
+custom_phrase:
+  dictionary: ''
+  user_dict: custom_phrase
+  db_class: stabledb
+  enable_completion: false
+  enable_sentence: false
+  initial_quality: 1
+
+emoji_suggestion:
+  opencc_config: emoji.json
+  option_name: emoji_suggestion
+  # tips: all
