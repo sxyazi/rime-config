@@ -390,3 +390,17 @@ patch:
         ascii_mode: true
     com.apple.dt.Xcode:              # Xcode
         ascii_mode: true
+    com.jetbrains.intellij:          # IntelliJ IDEA
+      ascii_mode: true
+      vim_mode: true
+    com.jetbrains.goland-EAP:        # GoLand EAP
+      ascii_mode: true
+      vim_mode: true
+    com.jetbrains.WebStorm:          # WebStorm.app
+      ascii_mode: true
+      vim_mode: true
+    com.jetbrains.datagrip:          # DataGrip
+      ascii_mode: true
+    com.jetbrains.CLion:             # CLion
+      ascii_mode: true
+      vim_mode: true

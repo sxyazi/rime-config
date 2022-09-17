@@ -1,33 +1,43 @@
 # 碼表各字段以製表符（Tab）间隔
 # 順序爲：文字+編碼+權重（決定重碼的次序、可選），用 Tab 间隔
 
+# 常用词
+OK	ok	1
+Pro	pro	1
+Emoji	emo	1
 Rime	rime	2
 Squirrel	rime	1
 
+# 符号
 >	dy	1
 ≥	dyd	1
 <	xy	1
 ≤	xyd	1
 ㎡	pfm	1
 
+# 按键
 Command	cmd	1
 Control	ctr	1
 Shift	shif	1
 Option	opt	1
+
+# 设备
 Mac	mac	1
 Type-C	typ	1
+USB-C	usb	1
 
-OK	ok	1
-Pro	pro	1
-Emoji	emo	1
-Google	gg	1
+# 公司名
+Google	goo	1
 Microsoft	mic	1
+JetBrains	jet	1
+GitHub	gh	1
 
+# 软件
+Vim	vim	1
 Git	git	1
 Markdown	md	1
 Android	andr	1
 Chrome	chr	1
-GitHub	gh	1
 Gmail	gm	1
 Google Voice	gv	1
 iCloud	ic	1
@@ -38,8 +48,7 @@ Safari	saf	1
 Spotify	sp	1
 Telegram	tg	1
 Twitter	tt	1
-TeamViewer  tv	1
-USB-C	usb	1
+TeamViewer	tv	1
 WeChat	wc	1
 Windows	win	1
 YouTube	yt	1
