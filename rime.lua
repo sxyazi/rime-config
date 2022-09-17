@@ -25,7 +25,7 @@ function cn_first(input, env)
     for cand in input:iter() do
         if (cand.text == typ) then
             table.insert(rest, cand)
-        elseif (i < 2) then
+        elseif (i < 2 and cand.preedit == typ) then
             yield(cand)
             i = i + 1
         else

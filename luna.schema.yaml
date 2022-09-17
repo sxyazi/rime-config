@@ -54,12 +54,11 @@ engine:
     - table_translator@custom_phrase # 自定义词组
     - table_translator@english # 英文输入
   filters:
-    - simplifier
     - simplifier@emoji_suggestion # 文字转 Emoji
     - simplifier@traditionalize # 简繁转换
+    - simplifier
     - uniquifier
     - charset_filter@gbk # GBK 过滤
-    # - single_char_filter
     - lua_filter@cn_first
 
 speller:
