@@ -393,6 +393,9 @@ patch:
     com.jetbrains.intellij:          # IntelliJ IDEA
       ascii_mode: true
       vim_mode: true
+    com.jetbrains.goland:            # GoLand
+      ascii_mode: true
+      vim_mode: true
     com.jetbrains.goland-EAP:        # GoLand EAP
       ascii_mode: true
       vim_mode: true

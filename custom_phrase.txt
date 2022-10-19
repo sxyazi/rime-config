@@ -31,6 +31,7 @@ Google	goo	1
 Microsoft	mic	1
 JetBrains	jet	1
 GitHub	gh	1
+Vultr	vultr	1
 
 # 软件
 Vim	vim	1

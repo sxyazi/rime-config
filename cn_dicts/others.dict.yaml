@@ -6,17 +6,17 @@
 #
 ---
 name: others
-version: "2022-09-13"
+version: "2022-10-03"
 sort: by_weight
 ...
 ##### 方便词（已经在 custom_phrase 写过了，这里再写一遍，可以让这些字词参与组词）
 # 双拼应该注释掉这几行
-一	i
-有	u
-一个	ig
-有一个	uig
-有个	ug
-又有	uu
+# 一	i
+# 有	u
+# 一个	ig
+# 有一个	uig
+# 有个	ug
+# 又有	uu
 
 
 ##### 容错词
@@ -155,7 +155,7 @@ sort: by_weight
 三个飛	san ge fei
 三个香
 三个马
-三个鱼
+三个魚	san ge yu
 三个鹿
 三个龍	san ge long
 三个个
@@ -254,7 +254,7 @@ sort: by_weight
 四个屮	si ge cao
 四个火
 四个牛
-四个鱼
+四个魚	si ge yu
 四个月
 四个日
 四个曰
