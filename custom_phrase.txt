@@ -1,19 +1,28 @@
 # 碼表各字段以製表符（Tab）间隔
 # 順序爲：文字+編碼+權重（決定重碼的次序、可選），用 Tab 间隔
 
+# 固定词
+我	w	1
+他	t	3
+她	t	2
+它	t	1
+与	y	2
+于	y	1
+有	u	2
+又	u	1
+一	i	3
+以	i	2
+已	i	1
+是	s	3
+时	s	2
+使	s	1
+
 # 常用词
 OK	ok	1
 Pro	pro	1
 Emoji	emo	1
 Rime	rime	2
 Squirrel	rime	1
-
-# 符号
->	dy	1
-≥	dyd	1
-<	xy	1
-≤	xyd	1
-㎡	pfm	1
 
 # 按键
 Command	cmd	1
