@@ -41,6 +41,7 @@ Microsoft	mic	1
 JetBrains	jet	1
 GitHub	gh	1
 Vultr	vultr	1
+Cloudflare	cloudf	1
 
 # 软件
 Vim	vim	1

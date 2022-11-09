@@ -7,14 +7,23 @@ rm = set([
   'dingy',  #定义
   'tong',   #同
   'tongs',  #同时
+  'cain',   #才能
+  'gain',   #概念
+  'chaos',  #超时
+  'shul',   #数量
+  'went',   #问题
+  'conger', #从而
+  'like',   #立刻
 
   # 专有名词
   'ip',
   'ios',
+  'ui',
 ])
 
 ins = [
   ('bytes', 'bytes', 16400000),
+  ('timestamp', 'timestamp', 361000000),
 ]
 ins.sort(key=lambda x: x[1])
 
@@ -23,11 +32,12 @@ cur = 0
 occur = {}
 with open('easy_en.dict.yaml', 'r') as f:
   for line in f:
-    if not line.strip():
+    s = line.strip()
+    if not s:
       buf.write(line)
       continue
 
-    parts = line.split('\t')
+    parts = s.split('\t')
     if len(parts) < 2:
       buf.write(line)
       continue
@@ -39,7 +49,8 @@ with open('easy_en.dict.yaml', 'r') as f:
       cur += 1
 
     if parts[1] not in rm:
-      buf.write(line)
+      buf.write(s)
+      buf.write('\n')
 
 with open('easy_en.dict.yaml', 'w') as f:
   f.write(buf.getvalue())

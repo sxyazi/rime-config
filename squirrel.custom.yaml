@@ -407,3 +407,6 @@ patch:
     com.jetbrains.CLion:             # CLion
       ascii_mode: true
       vim_mode: true
+    com.jetbrains.CLion-EAP:         # CLion EAP
+      ascii_mode: true
+      vim_mode: true
