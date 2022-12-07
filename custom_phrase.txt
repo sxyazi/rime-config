@@ -66,3 +66,7 @@ YouTube	yt	1
 MySQL	mys	1
 PostgreSQL	pos	1
 Docker	docker	1
+IntelliJ IDEA	idea	1
+CLion	clion	1
+GoLand	goland	1
+WebStorm	webstorm	1

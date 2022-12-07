@@ -399,7 +399,10 @@ patch:
     com.jetbrains.goland-EAP:        # GoLand EAP
       ascii_mode: true
       vim_mode: true
-    com.jetbrains.WebStorm:          # WebStorm.app
+    com.jetbrains.WebStorm:          # WebStorm
+      ascii_mode: true
+      vim_mode: true
+    com.jetbrains.WebStorm-EAP:      # WebStorm EAP
       ascii_mode: true
       vim_mode: true
     com.jetbrains.datagrip:          # DataGrip

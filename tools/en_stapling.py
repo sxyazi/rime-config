@@ -1,19 +1,24 @@
 from io import StringIO
 
 rm = set([
-  'piny',   #拼音
-  'pinyin', #拼音
-  'leix',   #类型
-  'dingy',  #定义
-  'tong',   #同
-  'tongs',  #同时
-  'cain',   #才能
-  'gain',   #概念
-  'chaos',  #超时
-  'shul',   #数量
-  'went',   #问题
-  'conger', #从而
-  'like',   #立刻
+  'piny',      #拼音
+  'pinyin',    #拼音
+  'leix',      #类型
+  'dingy',     #定义
+  'tong',      #同
+  'tongs',     #同时
+  'cain',      #才能
+  'gain',      #概念
+  'chaos',     #超时
+  'shul',      #数量
+  'went',      #问题
+  'conger',    #从而
+  'like',      #立刻
+  'hans',      #函数
+  'shashi',    #啥事
+  'zhengzhou', #郑州
+  'wangle',    #忘了
+  'banyan',    #扮演
 
   # 专有名词
   'ip',
