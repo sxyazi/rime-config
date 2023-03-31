@@ -26,9 +26,10 @@ Squirrel	rime	1
 
 # 按键
 Command	cmd	1
-Control	ctr	1
-Shift	shif	1
-Option	opt	1
+Command	command	1
+Control	control	1
+Shift	shift	1
+Option	option	1
 
 # 设备
 Mac	mac	1

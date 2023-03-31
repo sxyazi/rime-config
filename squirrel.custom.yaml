@@ -1,4 +1,6 @@
 patch:
+  keyboard_layout: com.apple.keylayout.Colemak
+
   show_notifications_when: appropriate     # 状态通知，可设为全开（always）全关（never）  
 
   # 皮肤主题名称输入在下方，分为浅色和深色
@@ -379,17 +381,18 @@ patch:
   # 特定App默认中/英文输入
   app_options:    
     com.apple.Spotlight:             # Spotlight
-        ascii_mode: true
+      ascii_mode: true
     com.apple.Terminal:              # Terminal
-        ascii_mode: true
+      ascii_mode: true
     com.runningwithcrayons.Alfred:   # Alfred
-        ascii_mode: true
-    com.googlecode.iterm2:           # iTerm2
-        ascii_mode: true
+      ascii_mode: true
+    net.kovidgoyal.kitty:            # kitty
+      ascii_mode: true
+      vim_mode: true
     com.microsoft.VSCode:            # Visual Studio Code
-        ascii_mode: true
+      ascii_mode: true
     com.apple.dt.Xcode:              # Xcode
-        ascii_mode: true
+      ascii_mode: true
     com.jetbrains.intellij:          # IntelliJ IDEA
       ascii_mode: true
       vim_mode: true
