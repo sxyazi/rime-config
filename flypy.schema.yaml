@@ -4,7 +4,7 @@
 schema:
   schema_id: flypy
   name: 小鹤双拼
-  version: '0.18'
+  version: "0.18"
   author:
     - double pinyin layout by 鶴
     - Rime schema by 佛振 <chen.sst@gmail.com>
@@ -14,23 +14,17 @@ schema:
     - easy_en
 
 switches:
-  - name: ascii_mode # 0 中文，1 英文
+  - name: ascii_mode
     reset: 0
-    states: [中文, 英文]
-  - name: traditionalization # 简繁转换
+    states: [中, A]
+  - name: traditionalization
     reset: 0
-    states: [简体, 繁體]
-  - name: emoji_suggestion # Emoji 开关
+    states: [简, 繁]
+  - name: full_shape
+    states: [半, 全]
+  - name: emoji_suggestion
     reset: 1
     states: ["🈚️️\uFE0E", "🈶️️\uFE0F"]
-  - name: full_shape # 全角/半角符号开关
-    states: [半角, 全角]
-  - options: ['utf8', 'gbk', 'gb2312'] # 字符集选单
-    reset: 0 # 默认 UTF8
-    states:
-      - UTF-8
-      - GBK
-      - GB2312
 
 engine:
   processors:
@@ -57,7 +51,6 @@ engine:
   filters:
     - simplifier@emoji_suggestion # 文字转 Emoji
     - simplifier@traditionalize # 简繁转换
-    - simplifier
     - uniquifier
     - charset_filter@gbk # GBK 过滤
     - lua_filter@cn_first
