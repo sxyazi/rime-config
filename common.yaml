@@ -69,7 +69,7 @@ traditionalize:
   opencc_config: s2t.json
   option_name: traditionalization
 
-english:
+easy_en:
   dictionary: easy_en
   spelling_hints: 6
   enable_completion: false # 禁止联想

@@ -38,8 +38,12 @@ engine:
     - uniquifier
 
 speller:
-  alphabet: zyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBA-_
+  alphabet: zyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBA
   delimiter: " '"
+  algebra:
+    # 前 2 个字母大写
+    - derive/^./\U$0/
+    - derive/^([a-z]{2})/\U$1/
 
 translator:
   dictionary: easy_en
