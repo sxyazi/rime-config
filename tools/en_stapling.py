@@ -22,6 +22,9 @@ rm = set(
         "banyan",  # 扮演
         "wuxian",  # 无限
         "wuxi",  # 无锡
+        "lins",  # 临时
+        "yulan",  # 预览
+        "jinx",  # 进行
         # 专有名词
         "ip",
         "ios",

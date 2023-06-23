@@ -7,9 +7,9 @@ patch:
 
   ascii_composer/switch_key:
     Caps_Lock: noop
-    Shift_L: commit_code
-    Shift_R: noop
-    Control_L: commit_code
+    Shift_L: noop
+    Shift_R: commit_code
+    Control_L: noop
     Control_R: noop
 
   # 匹配 patterns 时，原样输出
@@ -20,13 +20,14 @@ patch:
     uppercase: "[A-Z][-_+.'0-9A-Za-z]*$"
 
   key_binder/bindings:
+    - { when: composing, accept: Control+comma, toggle: traditionalization } # 简/繁切换
+    - { when: composing, accept: Control+period, toggle: full_shape } # 全/半切换
+
+    - { when: composing, accept: Tab, send: Shift+Right } # 分词
+    - { when: composing, accept: Shift+Tab, send: Shift+Left } # 分词（向左）
+
     - { when: has_menu, accept: Control+u, send: Page_Up } # 上一页
     - { when: has_menu, accept: Control+e, send: Page_Down } # 下一页
     - { when: has_menu, accept: Control+n, send: Left } # 左一个
     - { when: has_menu, accept: Control+i, send: Right } # 右一个
 
-    - { when: composing, accept: Tab, send: Shift+Right } # 分词
-    - { when: composing, accept: Shift+Tab, send: Shift+Left } # 分词（向左）
-
-    - { when: always, accept: Control+comma, toggle: traditionalization } # 简/繁切换
-    - { when: always, accept: Control+period, toggle: full_shape } # 全/半切换
